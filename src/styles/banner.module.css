@@ -1,0 +1,28 @@
+.container{
+    padding-top: 5%;
+    padding-bottom:5%;
+    width:50%;
+    margin:auto;
+}
+
+.bannerTitle{
+    padding:0;
+    margin:0;
+    font-size:36px;
+}
+
+.bannerDesc{
+    font-weight: 500;
+    font-size:22px;
+}
+.four{
+    color: #1D1DCE;
+}
+
+@media(max-width:768px){
+    .container{
+        width:95%;
+        padding-top:10%;
+        padding-bottom:10%;
+    }
+}

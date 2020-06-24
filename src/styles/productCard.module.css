@@ -1,0 +1,122 @@
+.container{
+    width:50%;
+    margin:auto;
+    background-color: #1E213A;
+    display:grid;
+    grid-template-areas: 
+    "gridS1 gridS2 gridS2"
+    "gridS3 gridS3 gridS3";
+    grid-column-gap:5%;
+    margin-top:10px;
+    margin-bottom:20px;
+    font-size:18px;
+
+}
+/* s1 is for the image, s2 is for the product name and desc, s3 is for the hashtags and amazon button */
+.gridS1{
+    grid-area: gridS1;
+    
+}
+.gridS2{
+    padding:0px 20px 20px 0px;
+    grid-area: gridS2;
+}
+.gridS3{
+    display:grid;
+    grid-area: gridS3;
+    background-color: #2A2E52;
+    
+    grid-template-areas: 
+    "gridS3Tags gridS3Tags gridS3Link";
+}
+
+/* s3 is a nested grid containing Tags and a Link  */
+.gridS3Tags{
+    grid-area: gridS3Tags;
+    margin:10px;
+}
+.gridS3Link{
+    grid-area: gridS3Link;
+    align-self: end;
+    margin:10px;
+}
+.amazonLink{
+    font-family: inherit; 
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #00F69B;
+    text-decoration: none;
+    width:100%;
+    color: black;
+    padding:10px;
+    border: none;
+    border-bottom: 5px solid green;
+    
+}
+
+.productImage{
+    width:100%;
+}
+.productTitle{
+    font-size: 28px;
+}
+.productDesc{
+    line-height: 1.58;
+}
+.hashtags{
+    float:left;
+    text-decoration: none;
+    font-weight: 700;
+    color:#4F5570;
+    padding:10px;
+    margin-left:5px;
+    margin-right:5px;
+    text-transform: uppercase;
+    list-style-type: none;
+    text-align: center;
+    background-color: #151729;
+}
+.ulStyle{
+    text-align: center;
+    margin:0;
+    padding:0;
+}
+
+
+
+
+@media(max-width:768px){
+    .container{
+        width:95%;
+        grid-template-areas: 
+        "gridS1"
+        "gridS2"
+        "gridS3";
+        
+    }
+    .gridS2{
+        padding:10px;
+    }
+    .gridS3{
+        grid-template-areas: 
+        "gridS3Tags"
+        "gridS3Link";
+    }
+    .productTitle{
+        font-size: 24px;
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .productDesc{
+        text-align: left;
+        line-height: 28px;
+        font-size: 18px;
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .hashtags{
+        float: none;
+        display: inline-block;
+    }
+    
+}

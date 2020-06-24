@@ -1,0 +1,39 @@
+.navigationel{
+    list-style: none;
+    float:left;
+    padding: 16px 0px 20px 20px;
+    font-weight: 700;
+    font-size:1.1rem;
+    text-align: center;
+    color: #E5E5E5;
+
+}
+
+.links{
+    text-decoration: none;
+
+    color: #4F5570;
+}
+
+.container{
+    width:90%;   
+    margin:auto;
+}
+nav{
+    float:right;
+}
+
+.logo{
+    display:inline;
+    position: center;
+}
+
+.active{
+    color:#ffffff;
+}
+
+@media(max-width: 768px){
+    .container{
+        width:95%;
+    }
+}

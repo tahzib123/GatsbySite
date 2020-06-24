@@ -1,0 +1,25 @@
+.container{
+    width:50%;
+    margin:auto;
+    padding-top:5%;
+}
+
+.aboutTitle{
+    font-size:32px;
+}
+
+.aboutText{
+    font-size:22px;
+}
+
+
+@media(max-width: 768px){
+    .container{
+        width:90%;
+    }
+}
+
+.spantext{
+    color: #00F69B;
+    text-decoration: none;
+}
