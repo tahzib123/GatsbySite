@@ -19,6 +19,12 @@
     color: #1D1DCE;
 }
 
+@media(max-width:1368px){
+    .container{
+        width:75%;
+    }
+}
+
 @media(max-width:768px){
     .container{
         width:95%;

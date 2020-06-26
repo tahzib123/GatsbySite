@@ -1,0 +1,8 @@
+[x] Gatsby Images
+[] Gatsby SEO
+[] Gatsby Sitemap
+[] AMP
+[] Category filtering
+[] Fix card container
+[] Product Description formatting
+[] remove api keys from gatsby confit into env variables

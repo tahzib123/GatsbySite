@@ -15,7 +15,9 @@
 /* s1 is for the image, s2 is for the product name and desc, s3 is for the hashtags and amazon button */
 .gridS1{
     grid-area: gridS1;
-    
+    min-width: 300px;
+    max-height: 500px;
+    overflow: hidden;
 }
 .gridS2{
     padding:0px 20px 20px 0px;
@@ -54,9 +56,7 @@
     
 }
 
-.productImage{
-    width:100%;
-}
+
 .productTitle{
     font-size: 28px;
 }
@@ -83,7 +83,11 @@
 }
 
 
-
+@media(max-width:1368px){
+    .container{
+        width:75%;
+    }
+}
 
 @media(max-width:768px){
     .container{
