@@ -13,14 +13,26 @@
     display:inline-block;
     text-align: center;
     padding:10px 10px 40px 40px;
+    list-style-type: none;
+
+}
+.categoryButtons{
+    background-color: #151323;
+    border: none;
+    outline: none;
+    cursor: pointer;
     text-decoration: none;
     font-size: 18px;
     font-weight:700;
     color: #4F5570;
-    list-style-type: none;
-
 }
-
+.categoryButtons:hover{
+    border: 1px solid #1D1DCE;
+}
+.categoryButtons:focus{
+    color: #fff;
+    border: 1px solid #1D1DCE;
+}
 @media(max-width:1368px){
     .container{
         width:75%;

@@ -24,7 +24,7 @@ const ProductCard = ({productData}) => {
                 <div className = {productStyles.gridS3Tags}>
                     <ul className = {productStyles.ulStyle}>
                         {productData.node.productTags.map(tag => {
-                            return <li className = {productStyles.hashtags}> #{tag} </li>
+                            return <li className = {productStyles.hashtags}> #{tag.toUpperCase()} </li>
                         })}
                         
                     </ul>                   

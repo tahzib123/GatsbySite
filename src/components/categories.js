@@ -1,18 +1,18 @@
 import React from "react";
 import categoryStyles from "../styles/categories.module.css";
 
-const categoryList = () => {
+const categoryList = ({onCategoryChange}) => {
     return(
         <div className = {categoryStyles.container}>
 
             <ul className = {categoryStyles.ulStyle}>
-                <li className = {categoryStyles.listItems}>ALL</li>
-                <li className = {categoryStyles.listItems}>TECH</li>
-                <li className = {categoryStyles.listItems}>TOOLS</li>
-                <li className = {categoryStyles.listItems}>BUDGET</li>
-                <li className = {categoryStyles.listItems}>UTILITY</li>
-                <li className = {categoryStyles.listItems}>VEHICLES</li>
-                <li className = {categoryStyles.listItems}>AUTOMATION</li>
+                <li className = {categoryStyles.listItems} ><button className = {categoryStyles.categoryButtons} onClick = {() => onCategoryChange("ALL")}>ALL</button></li>
+                <li className = {categoryStyles.listItems} ><button className = {categoryStyles.categoryButtons} onClick = {() => onCategoryChange("TECH")}>TECH</button></li>
+                <li className = {categoryStyles.listItems} ><button className = {categoryStyles.categoryButtons} onClick = {() => onCategoryChange("BUDGET")}>BUDGET</button></li>
+                <li className = {categoryStyles.listItems} ><button className = {categoryStyles.categoryButtons} onClick = {() => onCategoryChange("VEHICLES")}>VEHICLES</button></li>
+                <li className = {categoryStyles.listItems} ><button className = {categoryStyles.categoryButtons} onClick = {() => onCategoryChange("TOOLS")}>TOOLS</button></li>
+                <li className = {categoryStyles.listItems} ><button className = {categoryStyles.categoryButtons} onClick = {() => onCategoryChange("AUTOMATION")}>AUTOMATION</button></li>
+                <li className = {categoryStyles.listItems} ><button className = {categoryStyles.categoryButtons} onClick = {() => onCategoryChange("CRAFTS")}>CRAFTS</button></li>
             </ul>  
       
         </div>

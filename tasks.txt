@@ -2,7 +2,7 @@
 [] Gatsby SEO
 [] Gatsby Sitemap
 [] AMP
-[] Category filtering
+[x] Category filtering
 [] Fix card container
 [] Product Description formatting
-[] remove api keys from gatsby confit into env variables
+[] remove api keys from gatsby config into env variables
