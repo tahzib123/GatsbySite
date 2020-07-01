@@ -3,9 +3,10 @@ import Navbar from '../components/navbar';
 import  WelcomeBanner  from "../components/welcomebanner";
 import CategoryList from "../components/categories";
 import ProductCard from "../components/productCard";
-import ProductCardList from "../components/productCardList";
-import {graphql, useStaticQuery } from 'gatsby';
 
+import {graphql, useStaticQuery } from 'gatsby';
+import { FixedSizeList as List } from "react-window";
+import ProductCardList from "../components/productCardList";
 
 
 const Index = () => {
@@ -31,12 +32,23 @@ const Index = () => {
         }
     }
   `);
+  const Row = ({ index}) => (
+    <div >
+      {productArray[index]}
+    </div>
+  );
 
-  const myProductArray = data.allContentfulPostInfo.edges.map(edge => {
-    return <ProductCard productData = {edge} /> 
+
+  //make a product card out of all the contentful posts
+  const myProductArray = data.allContentfulPostInfo.edges.map((edge, index) => {
+    return <ProductCard key = {index} productData = {edge} /> 
   });
-  
+  //state used to update the product list based on which category is selected
   const [productArray, setProductArray] = useState(myProductArray);
+
+  //filters the product list based on if the keyword is contained in the products tag list and updates state
+  //runs when a different category is picked. 
+  
 
   const updateProducts = (filterKeyword) => {
     if(filterKeyword === "ALL"){
@@ -59,8 +71,8 @@ const Index = () => {
     <div>
       <Navbar />
       <WelcomeBanner />
-      <CategoryList onCategoryChange = {updateProducts} />
-      <ProductCardList productArray = {productArray}  />
+      <ProductCardList productArray = {productArray} />
+      
 
     </div>
   )

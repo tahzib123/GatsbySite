@@ -6,3 +6,13 @@
 [] Fix card container
 [] Product Description formatting
 [] remove api keys from gatsby config into env variables
+[] google featured snipits
+[x] add keys for props
+[] react window  https://markoskon.com/displaying-hundreds-of-images-with-react-window-and-gatsby-image/
+[] source own fonts https://markoskon.com/extremely-fast-load-time-with-gatsby-and-self-hosted-fonts/
+[x] 404 page
+[] better active category effect
+[] google analytics https://www.gatsbyjs.org/docs/adding-analytics/
+[] contact form https://www.gatsbyjs.org/docs/building-a-contact-form/
+[] footer
+[] PWA with gatsby-plugin-offline ??? maybe not possible when using react window

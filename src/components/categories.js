@@ -1,6 +1,7 @@
 import React from "react";
 import categoryStyles from "../styles/categories.module.css";
 
+//change state when a button is clicked
 const categoryList = ({onCategoryChange}) => {
     return(
         <div className = {categoryStyles.container}>
