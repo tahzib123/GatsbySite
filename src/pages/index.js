@@ -3,10 +3,10 @@ import Navbar from '../components/navbar';
 import  WelcomeBanner  from "../components/welcomebanner";
 import CategoryList from "../components/categories";
 import ProductCard from "../components/productCard";
-
-import {graphql, useStaticQuery } from 'gatsby';
-import { FixedSizeList as List } from "react-window";
 import ProductCardList from "../components/productCardList";
+import {graphql, useStaticQuery } from 'gatsby';
+import { Helmet } from "react-helmet";
+
 
 
 const Index = () => {
@@ -32,11 +32,7 @@ const Index = () => {
         }
     }
   `);
-  const Row = ({ index}) => (
-    <div >
-      {productArray[index]}
-    </div>
-  );
+
 
 
   //make a product card out of all the contentful posts
@@ -67,10 +63,19 @@ const Index = () => {
     }
   }
 
+
+
   return(
     <div>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
+          <meta charSet="utf-8" />
+          <meta name="title" content="Gadgets For Guys"/>
+          <meta name = "description" content = "The ultimate way to find affordable gifts for men. Perfect for any occassion and plenty of options for everyone." />
+          <title>Gadgets For Guys</title>
+      </Helmet>
       <Navbar />
       <WelcomeBanner />
+      <CategoryList onCategoryChange = {updateProducts} />
       <ProductCardList productArray = {productArray} />
       
 

@@ -4,9 +4,10 @@ import  React  from "react";
 const ProductCardList = ({productArray}) => {
 
     return (
-        <div>
-          {productArray}  
-        </div>
+      <div>
+        {productArray}
+      </div>
+        
     );
 }
 

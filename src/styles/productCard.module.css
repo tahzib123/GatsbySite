@@ -52,7 +52,8 @@
     color: black;
     padding:10px;
     border: none;
-    border-bottom: 5px solid green;
+    box-shadow: 0px 0px 10px green;
+    /* border-bottom: 5px solid green; */
     
 }
 
@@ -67,7 +68,7 @@
     float:left;
     text-decoration: none;
     font-weight: 700;
-    color:#4F5570;
+    color:#6e7699;
     padding:10px;
     margin-left:5px;
     margin-right:5px;
@@ -99,12 +100,13 @@
         
     }
     .gridS2{
-        padding:10px;
+        padding:0px;
     }
     .gridS3{
         grid-template-areas: 
         "gridS3Tags"
         "gridS3Link";
+
     }
     .productTitle{
         font-size: 24px;
@@ -114,13 +116,17 @@
     .productDesc{
         text-align: left;
         line-height: 28px;
-        font-size: 18px;
+        font-size: 16px;
         padding-left:20px;
         padding-right:20px;
     }
     .hashtags{
         float: none;
         display: inline-block;
+    }
+    .amazonLink{
+        grid-column-gap: 0;
+        width: 100%;
     }
     
 }
