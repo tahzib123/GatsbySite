@@ -8,7 +8,6 @@ import {graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from "react-helmet";
 
 
-
 const Index = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -37,7 +36,9 @@ const Index = () => {
 
   //make a product card out of all the contentful posts
   const myProductArray = data.allContentfulPostInfo.edges.map((edge, index) => {
-    return <ProductCard key = {index} productData = {edge} /> 
+    return (
+        <ProductCard key = {index} productData = {edge} />
+    )
   });
   //state used to update the product list based on which category is selected
   const [productArray, setProductArray] = useState(myProductArray);
