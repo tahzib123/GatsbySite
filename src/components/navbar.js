@@ -8,7 +8,7 @@ const navbar = () => {
         <div className = {navbarStyles.container}>
             <Link to = "/"><img src = {logo} height = "50px" width ="72px;" alt = "logo" className = {navbarStyles.logo} /></Link>
             <nav>
-                <ul>
+                <ul className = {navbarStyles.ulStyle}>
                     <li className = {navbarStyles.navigationel}><Link to = "/" className = {navbarStyles.links} activeClassName={navbarStyles.active}>Home</Link></li>
                     <li className = {navbarStyles.navigationel}><Link to = "/about" className = {navbarStyles.links} activeClassName={navbarStyles.active}>About</Link></li>
                     <li className = {navbarStyles.navigationel}><Link to = "/contact" className = {navbarStyles.links} activeClassName={navbarStyles.active}>Contact</Link></li>

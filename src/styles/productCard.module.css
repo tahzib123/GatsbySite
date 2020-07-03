@@ -9,7 +9,7 @@
     grid-column-gap:5%;
     margin-top:10px;
     margin-bottom:20px;
-    font-size:18px;
+    font-size:16px;
 
 }
 /* s1 is for the image, s2 is for the product name and desc, s3 is for the hashtags and amazon button */
@@ -36,15 +36,18 @@
 .gridS3Tags{
     grid-area: gridS3Tags;
     margin:10px;
+    
 }
 .gridS3Link{
     grid-area: gridS3Link;
     align-self: end;
+    justify-self: normal;
     margin:10px;
 }
 .amazonLink{
     font-family: inherit; 
-    font-weight: 700;
+    font-size: 1em;
+    text-align: center;
     cursor: pointer;
     background-color: #00F69B;
     text-decoration: none;
@@ -52,14 +55,15 @@
     color: black;
     padding:10px;
     border: none;
-    box-shadow: 0px 0px 10px green;
-    /* border-bottom: 5px solid green; */
-    
+    box-shadow: 0px 0px 5px green;
+}
+.amazonLink:hover{
+    box-shadow: 0px 0px 20px green;
 }
 
 
 .productTitle{
-    font-size: 28px;
+    font-size: 24px;
 }
 .productDesc{
     line-height: 1.58;
@@ -109,7 +113,7 @@
 
     }
     .productTitle{
-        font-size: 24px;
+        font-size: 20px;
         padding-left:20px;
         padding-right:20px;
     }
