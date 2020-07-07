@@ -1,0 +1,47 @@
+.formContainer{
+    width: 60%;
+    margin: auto;
+    padding-bottom:5%;
+}
+
+
+.searchBox {
+    border: 1px solid #2A2E52;
+    height: 20px;
+    width: 85%;
+    padding: 10px 10px 10px 5px;
+    outline: 0;
+    background-color: #151729;
+    color:#CDD5E0;
+    font-size:18px;
+    margin:0;
+}
+
+.searchBox::placeholder{
+    color:#6e7699;
+}
+
+
+.submitButton{
+    border: none;
+    width: 10%;
+    padding: 10px 10px 10px 10px;
+    outline: 0;
+    background-color: #00F69B;
+    color:black;
+    font-size:18px;
+    margin:0;
+}
+
+
+@media(max-width: 768px){
+    .formContainer{
+        width:95%;
+    }
+    .searchBox{
+        width:80%;
+    }
+    .submitButton{
+        width:15%;
+    }
+}

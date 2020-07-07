@@ -4,6 +4,7 @@ import  WelcomeBanner  from "../components/welcomebanner";
 import CategoryList from "../components/categories";
 import ProductCard from "../components/productCard";
 import ProductCardList from "../components/productCardList";
+import SearchBar from "../components/searchBar";
 import {graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from "react-helmet";
 
@@ -42,6 +43,8 @@ const Index = () => {
   });
   //state used to update the product list based on which category is selected
   const [productArray, setProductArray] = useState(myProductArray);
+  //state for the searchBox value
+  const [searchField, setSearchField] = useState("");
 
   //filters the product list based on if the keyword is contained in the products tag list and updates state
   //runs when a different category is picked. 
@@ -65,6 +68,24 @@ const Index = () => {
   }
 
 
+  //handle when the value of the search bar changes
+  const handleChange = (e) => {
+
+    setSearchField(e.target.value);
+  }
+//when search bar is submitted
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    document.getElementById("searchForm").reset();
+    var filteredProducts = productArray.filter((product) => {
+      if(product.props.productData.node.productTitle.includes(searchField)){
+        return product;
+      }
+      return null;
+    })
+    setProductArray(filteredProducts);
+  }
+
 
   return(
     <div>
@@ -76,6 +97,7 @@ const Index = () => {
       </Helmet>
       <Navbar />
       <WelcomeBanner />
+      <SearchBar handleChange = {handleChange} handleSubmit = {handleSubmit} />
       <CategoryList onCategoryChange = {updateProducts} />
       <ProductCardList productArray = {productArray} />
       
