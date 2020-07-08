@@ -33,6 +33,7 @@ nav{
 
 .active{
     color:#ffffff;
+    border-bottom: 2px solid #42A5F5;
 }
 
 @media(max-width:1368px){

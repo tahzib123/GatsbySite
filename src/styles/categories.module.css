@@ -26,12 +26,10 @@
     font-weight:700;
     color: #6e7699;
 }
-.categoryButtons:hover{
-    border: 1px solid #1D1DCE;
-}
-.categoryButtons:focus{
+
+#active{
     color: #fff;
-    border: 1px solid #1D1DCE;
+    border-bottom: 2px solid #42A5F5;
 }
 @media(max-width:1368px){
     .container{

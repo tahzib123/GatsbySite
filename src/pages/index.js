@@ -35,7 +35,7 @@ const Index = () => {
 
 
 
-  //make a product card out of all the contentful posts
+  //make a product card out of all the contentful posts from graphql query
   const myProductArray = data.allContentfulPostInfo.edges.map((edge, index) => {
     return (
         <ProductCard key = {index} productData = {edge} />
@@ -45,12 +45,13 @@ const Index = () => {
   const [productArray, setProductArray] = useState(myProductArray);
   //state for the searchBox value
   const [searchField, setSearchField] = useState("");
+  //state for which category is currently active
+  const [activeIndex, setIndex] = useState(0);
+
 
   //filters the product list based on if the keyword is contained in the products tag list and updates state
   //runs when a different category is picked. 
-  
-
-  const updateProducts = (filterKeyword) => {
+  const updateProducts = (filterKeyword, index) => {
     if(filterKeyword === "ALL"){
       setProductArray(myProductArray);
     }else{
@@ -65,12 +66,12 @@ const Index = () => {
       })
       setProductArray(filteredProducts);
     }
+    setIndex(index);
   }
 
 
   //handle when the value of the search bar changes
   const handleChange = (e) => {
-
     setSearchField(e.target.value);
   }
 //when search bar is submitted
@@ -98,7 +99,7 @@ const Index = () => {
       <Navbar />
       <WelcomeBanner />
       <SearchBar handleChange = {handleChange} handleSubmit = {handleSubmit} />
-      <CategoryList onCategoryChange = {updateProducts} />
+      <CategoryList onCategoryChange = {updateProducts} index = {activeIndex}/>
       <ProductCardList productArray = {productArray} />
       
 
