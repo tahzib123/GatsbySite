@@ -1,21 +1,21 @@
 [x] Gatsby Images
 [x] Gatsby SEO
-[] AMP
+[x] PWA with gatsby-plugin-offline ??? maybe not possible when using react window
 [x] Category filtering
-[] Fix card container
 [x] remove api keys from gatsby config into env variables    https://codesandbox.io/s/github/smakosh/gatsby-portfolio-dev?file=/gatsby-config.js
-[] google featured snipits 
-[] add keys for props
-[] source own fonts https://markoskon.com/extremely-fast-load-time-with-gatsby-and-self-hosted-fonts/
 [x] 404 page  
 [x] better active category effect
 [] google analytics https://www.gatsbyjs.org/docs/adding-analytics/
 [] contact form https://www.gatsbyjs.org/docs/building-a-contact-form/
 [] footer
-[x] PWA with gatsby-plugin-offline ??? maybe not possible when using react window
+[] google featured snipits 
+[] add keys for props
+[] source own fonts https://markoskon.com/extremely-fast-load-time-with-gatsby-and-self-hosted-fonts/
 [] new color font for link items and category lists
-
+[] AMP
 [] scroll to top button
+[] Fix card container
+
 
 
 long term:

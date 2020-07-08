@@ -10,6 +10,7 @@
     margin-top:10px;
     margin-bottom:20px;
     font-size:16px;
+    border-radius: 5px;
 
 }
 /* s1 is for the image, s2 is for the product name and desc, s3 is for the hashtags and amazon button */
@@ -18,16 +19,18 @@
     min-width: 300px;
     max-height: 500px;
     overflow: hidden;
+    border-radius: 5px 0px 0px 0px;
 }
 .gridS2{
     padding:0px 20px 20px 0px;
     grid-area: gridS2;
+    border-radius: 5px;
 }
 .gridS3{
     display:grid;
     grid-area: gridS3;
     background-color: #2A2E52;
-    
+    border-radius: 0px 0px 5px 5px;
     grid-template-areas: 
     "gridS3Tags gridS3Tags gridS3Link";
 }
@@ -36,7 +39,6 @@
 .gridS3Tags{
     grid-area: gridS3Tags;
     margin:10px;
-    
 }
 .gridS3Link{
     grid-area: gridS3Link;
@@ -57,6 +59,7 @@
     padding:10px;
     border: none;
     box-shadow: 0px 0px 5px green;
+    border-radius: 5px;
 }
 .amazonLink:hover{
     box-shadow: 0px 0px 20px green;
@@ -81,6 +84,7 @@
     list-style-type: none;
     text-align: center;
     background-color: #151729;
+    border-radius: 5px;
 }
 .ulStyle{
     text-align: center;
@@ -103,6 +107,9 @@
         "gridS2"
         "gridS3";
         
+    }
+    .gridS1{
+        border-radius: 5px 5px 0px 0px;
     }
     .gridS2{
         padding:0px;

@@ -15,6 +15,7 @@
     color:#CDD5E0;
     font-size:18px;
     margin:0;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .searchBox::placeholder{
@@ -33,6 +34,7 @@
     color:black;
     font-size:18px;
     margin:0;
+    border-radius: 0px 5px 5px 0px;
 }
 .submitButton:hover{
     box-shadow: 0px 0px 20px green;
