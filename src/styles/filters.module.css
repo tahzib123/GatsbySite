@@ -19,6 +19,13 @@
 .ages{
    float: right;
 }
+.activeFilterClear{
+    display: inline;
+
+}
+.inactiveFilterClear{
+    display: none;
+}
 
 @media(max-width:1368px){
     .container{

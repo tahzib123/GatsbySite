@@ -50,6 +50,8 @@ const Index = () => {
   const [searchField, setSearchField] = useState("");
   //state for which category is currently active
   const [activeIndex, setIndex] = useState(0);
+  //state for value of clearFilter button showing up on screen
+  const [showClearFilter, setClearFilter] = useState(0);
 
 
   //filters the product list based on if the keyword is contained in the products tag list and updates state
@@ -90,12 +92,14 @@ const Index = () => {
     setProductArray(filteredProducts);
   }
 
-  const filterByAge = (ageRange) => {
-    console.log(ageRange);
+  const filterByAge = (event) => {
+    if(showClearFilter !== 1) {setClearFilter(1);}
+    
+    if(event.target.value === ""){ return; }
 
     var filteredProducts = productArray.filter((product) => {
       console.log(product.props.productData.node.productAges);
-      if(product.props.productData.node.productAges === ageRange){
+      if(product.props.productData.node.productAges === event.target.value){
         return product;
       }
       return null;
@@ -103,6 +107,26 @@ const Index = () => {
     setProductArray(filteredProducts);
   }
 
+  const filterByBudget = (event) => {
+    if(showClearFilter !== 1) {setClearFilter(1);}
+    
+    if(event.target.value === ""){ return; }
+
+    var filteredProducts = productArray.filter((product) => {
+      console.log(product.props.productData.node.productBudget);
+      if(product.props.productData.node.productBudget === event.target.value){
+        return product;
+      }
+      return null;
+    })
+    setProductArray(filteredProducts);
+  }
+
+  const clearFilters = () => {
+    setProductArray(myProductArray);
+    setClearFilter(0);
+    
+  }
 
   return(
     <div>
@@ -116,7 +140,7 @@ const Index = () => {
       <WelcomeBanner />
       <SearchBar handleChange = {handleChange} handleSubmit = {handleSubmit} />
       <CategoryList onCategoryChange = {updateProducts} index = {activeIndex}/>
-      <Filters ageFilter = {filterByAge}/>
+      <Filters filterByBudget = {filterByBudget} filterByAge = {filterByAge} clearFilters = {clearFilters} showClearFilter = {showClearFilter} />
       <ProductCardList productArray = {productArray} />
       
 
