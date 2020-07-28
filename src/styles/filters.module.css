@@ -1,0 +1,33 @@
+.container{
+    width: 60%;
+    margin: auto;
+    
+}
+.title{
+    font-size: 18px;
+}
+.ages, .budget{
+    margin-bottom: 1em;
+    padding: .25em;
+    border: 0;
+    
+    border-radius: 5px;
+    background-color: #2A2E52;
+    color: white;
+}
+  
+.ages{
+   float: right;
+}
+
+@media(max-width:1368px){
+    .container{
+        width:75%;
+    }
+}
+
+@media(max-width:768px){
+    .container{
+        width: 95%;
+    }
+}

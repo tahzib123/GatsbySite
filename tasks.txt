@@ -5,16 +5,16 @@
 [x] remove api keys from gatsby config into env variables    https://codesandbox.io/s/github/smakosh/gatsby-portfolio-dev?file=/gatsby-config.js
 [x] 404 page  
 [x] better active category effect
+[x] search bar should not be case sensitive
 [] google analytics https://www.gatsbyjs.org/docs/adding-analytics/
 [] contact form https://www.gatsbyjs.org/docs/building-a-contact-form/
-[] footer
 [] google featured snipits 
 [] add keys for props
 [] source own fonts https://markoskon.com/extremely-fast-load-time-with-gatsby-and-self-hosted-fonts/
 [] new color font for link items and category lists
 [] AMP
 [] scroll to top button
-[] Fix card container
+[] Fix card container to make images take proper height of container
 
 
 

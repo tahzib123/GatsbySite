@@ -5,6 +5,7 @@ import CategoryList from "../components/categories";
 import ProductCard from "../components/productCard";
 import ProductCardList from "../components/productCardList";
 import SearchBar from "../components/searchBar";
+import Filters from "../components/filters";
 import {graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from "react-helmet";
 
@@ -27,6 +28,8 @@ const Index = () => {
                         json
                     }
                     productUrl
+                    productAges
+                    productBudget
                 }
             }
         }
@@ -79,7 +82,20 @@ const Index = () => {
     e.preventDefault();
     document.getElementById("searchForm").reset();
     var filteredProducts = productArray.filter((product) => {
-      if(product.props.productData.node.productTitle.includes(searchField)){
+      if(product.props.productData.node.productTitle.toLowerCase().includes(searchField.toLowerCase())){
+        return product;
+      }
+      return null;
+    })
+    setProductArray(filteredProducts);
+  }
+
+  const filterByAge = (ageRange) => {
+    console.log(ageRange);
+
+    var filteredProducts = productArray.filter((product) => {
+      console.log(product.props.productData.node.productAges);
+      if(product.props.productData.node.productAges === ageRange){
         return product;
       }
       return null;
@@ -93,13 +109,14 @@ const Index = () => {
       <Helmet htmlAttributes={{ lang: 'en' }}>
           <meta charSet="utf-8" />
           <meta name="title" content="Gadgets For Guys"/>
-          <meta name = "description" content = "The ultimate way to find affordable gifts for men. Perfect for any occassion and plenty of options for everyone." />
+          <meta name = "description" content = "The ultimate way to find affordable gadgets for men. Perfect for any occassion and plenty of options for everyone." />
           <title>Gadgets For Guys</title>
       </Helmet>
-      <Navbar />
+      <Navbar productArray = {myProductArray} />
       <WelcomeBanner />
       <SearchBar handleChange = {handleChange} handleSubmit = {handleSubmit} />
       <CategoryList onCategoryChange = {updateProducts} index = {activeIndex}/>
+      <Filters ageFilter = {filterByAge}/>
       <ProductCardList productArray = {productArray} />
       
 

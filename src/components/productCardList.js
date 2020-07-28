@@ -12,7 +12,11 @@ const Loading = () => {
 
 
 const ProductCardList = ({productArray}) => {
-
+  if(productArray.length === 0){
+    return (
+      <p>No products found, Click <span>here </span>to return to home.</p>
+    )
+  }else{
     return (
       
         <div className = "product-container">
@@ -27,6 +31,7 @@ const ProductCardList = ({productArray}) => {
         </div>
     
     );
+  }
 }
 
 export default ProductCardList;
