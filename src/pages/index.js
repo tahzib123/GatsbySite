@@ -52,7 +52,8 @@ const Index = () => {
   const [activeIndex, setIndex] = useState(0);
   //state for value of clearFilter button showing up on screen
   const [showClearFilter, setClearFilter] = useState(0);
-
+  //state for reseting age select drop down
+  const [ageValue, setAgeValue] = useState("");
 
   //filters the product list based on if the keyword is contained in the products tag list and updates state
   //runs when a different category is picked. 
@@ -94,7 +95,7 @@ const Index = () => {
 
   const filterByAge = (event) => {
     if(showClearFilter !== 1) {setClearFilter(1);}
-    
+    console.log(event.target.value);
     if(event.target.value === ""){ return; }
 
     var filteredProducts = productArray.filter((product) => {
@@ -105,6 +106,8 @@ const Index = () => {
       return null;
     })
     setProductArray(filteredProducts);
+    setAgeValue(event.target.value);
+    
   }
 
   const filterByBudget = (event) => {
@@ -125,6 +128,7 @@ const Index = () => {
   const clearFilters = () => {
     setProductArray(myProductArray);
     setClearFilter(0);
+    setAgeValue("");
     
   }
 
@@ -140,7 +144,7 @@ const Index = () => {
       <WelcomeBanner />
       <SearchBar handleChange = {handleChange} handleSubmit = {handleSubmit} />
       <CategoryList onCategoryChange = {updateProducts} index = {activeIndex}/>
-      <Filters filterByBudget = {filterByBudget} filterByAge = {filterByAge} clearFilters = {clearFilters} showClearFilter = {showClearFilter} />
+      <Filters filterByBudget = {filterByBudget} filterByAge = {filterByAge} clearFilters = {clearFilters} showClearFilter = {showClearFilter} ageValue = {ageValue} />
       <ProductCardList productArray = {productArray} />
       
 
