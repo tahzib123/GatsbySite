@@ -13,26 +13,28 @@ import { Helmet } from "react-helmet";
 const Index = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-        allContentfulPostInfo {
-            edges {
-                node {
-                    productTitle
-                    productImage {
-                        fluid(maxWidth: 1000) {
-                          ...GatsbyContentfulFluid
-                        }
-                    }
-                    productTags
-                    slug
-                    productDescription {
-                        json
-                    }
-                    productUrl
-                    productAges
-                    productBudget
-                }
-            }
-        }
+      allContentfulPostInfo {
+          edges {
+              node {
+                  productTitle
+                  productImage {
+                      fluid(maxWidth: 1000) {
+                        ...GatsbyContentfulFluid
+                      }
+                  }
+                  productTags
+                  slug
+                  productDescription {
+                      json
+                  }
+                  productLink{
+                    productLink
+                  }
+                  productAgeRanges
+                  productBudget
+              }
+          }
+      }
     }
   `);
 

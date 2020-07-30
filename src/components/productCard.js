@@ -32,7 +32,7 @@ const ProductCard = ({productData}) => {
                         </ul>                   
                     </div>
                     <div className = {productStyles.gridS3Link} >
-                        <form action={productData.node.productUrl} method="get" target="_blank">
+                        <form action={productData.node.productLink.productLink} method="get" target="_blank">
                             <button className = {productStyles.amazonLink} type="submit">Check on Amazon</button>
                         </form>                    
                     </div>
