@@ -14,7 +14,7 @@ const Loading = () => {
 const ProductCardList = ({productArray}) => {
   if(productArray.length === 0){
     return (
-      <p>No products found, Click <span>here </span>to return to home.</p>
+      <p style = {{textAlign: "center"}}>No products found. Clear the filters or change categories.</p>
     )
   }else{
     return (

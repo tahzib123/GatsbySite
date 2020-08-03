@@ -37,15 +37,13 @@ const Index = () => {
       }
     }
   `);
-
-
-
   //make a product card out of all the contentful posts from graphql query
   const myProductArray = data.allContentfulPostInfo.edges.map((edge, index) => {
     return (
         <ProductCard key = {index} productData = {edge} />
     )
   });
+  //---------------------------------------------------------------------- State hooks ------------------------------------------------------------------------ //
   //state used to update the product list based on which category is selected
   const [productArray, setProductArray] = useState(myProductArray);
   //state for the searchBox value
@@ -55,7 +53,27 @@ const Index = () => {
   //state for value of clearFilter button showing up on screen
   const [showClearFilter, setClearFilter] = useState(0);
   //state for reseting age select drop down
-  const [ageValue, setAgeValue] = useState("");
+  const [ageValue, setAgeValue] = useState("-1");
+  //state for reseting Budget select drop down
+  const [budgetValue, setBudgetValue] = useState("-1");
+
+
+
+  // ---------------------------------------------------------------  Helper Functions ------------------------------------------------------------------------ //
+
+  // const mapIndexToCategory = (index) => {
+  //   if(index === 0){ return "ALL"};
+  //   if(index === 1){ return "TECH"};
+  //   if(index === 2){ return "BUDGET"};
+  //   if(index === 3){ return "VEHICLES"};
+  //   if(index === 4){ return "TOOLS"};
+  //   if(index === 5){ return "AUTOMATION"};
+  //   if(index === 6){ return "CRAFTS"};
+  // }
+
+
+
+  // ---------------------------------------------------------------  Callback Functions ------------------------------------------------------------------------ //
 
   //filters the product list based on if the keyword is contained in the products tag list and updates state
   //runs when a different category is picked. 
@@ -82,7 +100,7 @@ const Index = () => {
   const handleChange = (e) => {
     setSearchField(e.target.value);
   }
-//when search bar is submitted
+  //when search bar is submitted
   const handleSubmit = (e) => {
     e.preventDefault();
     document.getElementById("searchForm").reset();
@@ -94,15 +112,15 @@ const Index = () => {
     })
     setProductArray(filteredProducts);
   }
-
+  
   const filterByAge = (event) => {
     if(showClearFilter !== 1) {setClearFilter(1);}
-    console.log(event.target.value);
-    if(event.target.value === ""){ return; }
+    
+    if(event.target.value === "-1"){ return; }
 
     var filteredProducts = productArray.filter((product) => {
-      console.log(product.props.productData.node.productAges);
-      if(product.props.productData.node.productAges === event.target.value){
+      
+      if(product.props.productData.node.productAgeRanges.includes(event.target.value) ){
         return product;
       }
       return null;
@@ -111,28 +129,37 @@ const Index = () => {
     setAgeValue(event.target.value);
     
   }
-
   const filterByBudget = (event) => {
     if(showClearFilter !== 1) {setClearFilter(1);}
     
-    if(event.target.value === ""){ return; }
+    if(event.target.value === "-1"){ return; }
 
     var filteredProducts = productArray.filter((product) => {
-      console.log(product.props.productData.node.productBudget);
+      
       if(product.props.productData.node.productBudget === event.target.value){
         return product;
       }
       return null;
     })
     setProductArray(filteredProducts);
+    setBudgetValue(event.target.value);
   }
+
 
   const clearFilters = () => {
     setProductArray(myProductArray);
     setClearFilter(0);
-    setAgeValue("");
+    setAgeValue("-1");
+    setBudgetValue("-1");
     
   }
+
+  // ---------------------------------------------------------------  ================ ------------------------------------------------------------------------ //
+
+
+
+
+  
 
   return(
     <div>
@@ -145,8 +172,8 @@ const Index = () => {
       <Navbar productArray = {myProductArray} />
       <WelcomeBanner />
       <SearchBar handleChange = {handleChange} handleSubmit = {handleSubmit} />
-      <CategoryList onCategoryChange = {updateProducts} index = {activeIndex}/>
-      <Filters filterByBudget = {filterByBudget} filterByAge = {filterByAge} clearFilters = {clearFilters} showClearFilter = {showClearFilter} ageValue = {ageValue} />
+      <CategoryList onCategoryChange = {updateProducts} activeIndex = {activeIndex}  />
+      <Filters filterByBudget = {filterByBudget} filterByAge = {filterByAge} clearFilters = {clearFilters} showClearFilter = {showClearFilter} ageValue = {ageValue} budgetValue = {budgetValue}/>
       <ProductCardList productArray = {productArray} />
       
 

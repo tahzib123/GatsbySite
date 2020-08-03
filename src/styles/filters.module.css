@@ -21,12 +21,28 @@
 }
 .activeFilterClear{
     display: inline;
-
+    padding: 5px;
+    border: none;
+    background-color: #151323;
+    color: white;
+    text-decoration: underline;
+    padding-left: 10px;
+    border-radius: 5px;
 }
+.activeFilterClear:hover{
+    
+    background-color: #2A2E52;
+}
+
 .inactiveFilterClear{
     display: none;
 }
-
+.inactiveTitle{
+    display: none;
+}
+.activeTitle{
+    display: block;
+}
 @media(max-width:1368px){
     .container{
         width:75%;
@@ -36,5 +52,8 @@
 @media(max-width:768px){
     .container{
         width: 95%;
+    }
+    .activeTitle{
+        font-size: 24px;
     }
 }
