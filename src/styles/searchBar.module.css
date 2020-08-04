@@ -39,7 +39,11 @@
 .submitButton:hover{
     box-shadow: 0px 0px 20px green;
 }
-
+@media(max-width:1368px){
+    .formContainer{
+        width:75%;
+    }
+}
 
 @media(max-width: 768px){
     .formContainer{

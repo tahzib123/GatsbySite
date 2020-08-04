@@ -43,6 +43,8 @@ const Index = () => {
         <ProductCard key = {index} productData = {edge} />
     )
   });
+  //var currentCategoryProducts = myProductArray;   //so that we can reset back to current category products when clear filters is clicked
+
   //---------------------------------------------------------------------- State hooks ------------------------------------------------------------------------ //
   //state used to update the product list based on which category is selected
   const [productArray, setProductArray] = useState(myProductArray);
@@ -56,7 +58,8 @@ const Index = () => {
   const [ageValue, setAgeValue] = useState("-1");
   //state for reseting Budget select drop down
   const [budgetValue, setBudgetValue] = useState("-1");
-
+  //so that we can reset back to current category products when clear filters is clicked
+  const [currentCategoryProducts, setCurrentCategoryProducts] = useState(myProductArray);
 
 
   // ---------------------------------------------------------------  Helper Functions ------------------------------------------------------------------------ //
@@ -79,6 +82,7 @@ const Index = () => {
   //runs when a different category is picked. 
   const updateProducts = (filterKeyword, index) => {
     if(filterKeyword === "ALL"){
+      setCurrentCategoryProducts(myProductArray);
       setProductArray(myProductArray);
     }else{
       const filteredProducts = myProductArray.filter((product) => {
@@ -90,8 +94,10 @@ const Index = () => {
         }
         return null;
       })
+      setCurrentCategoryProducts(filteredProducts);
       setProductArray(filteredProducts);
     }
+    
     setIndex(index);
   }
 
@@ -147,7 +153,7 @@ const Index = () => {
 
 
   const clearFilters = () => {
-    setProductArray(myProductArray);
+    setProductArray(currentCategoryProducts);
     setClearFilter(0);
     setAgeValue("-1");
     setBudgetValue("-1");
@@ -169,7 +175,7 @@ const Index = () => {
           <meta name = "description" content = "The ultimate way to find affordable gadgets for men. Perfect for any occassion and plenty of options for everyone." />
           <title>Gadgets For Guys</title>
       </Helmet>
-      <Navbar productArray = {myProductArray} />
+      <Navbar />
       <WelcomeBanner />
       <SearchBar handleChange = {handleChange} handleSubmit = {handleSubmit} />
       <CategoryList onCategoryChange = {updateProducts} activeIndex = {activeIndex}  />

@@ -17,18 +17,16 @@
 [] scroll to top button
 [] remove all console logs
 [] categorys should be made programmatically
-[] category ui should be like a slideshow
+
 [] if applying both filters then it should narrow down the product array
-[] clear filters should reset back to the category not all the products
+[] clear filters should reset back to the category not all the products (store currentCategory array and use it for filters. Then when clear filters is clicked reset state to currentCategory array)
 [] fix image border radius
+[]when you search for an item clear the active category
 
 
-long term:
-[] answer some questions and get suggested products
 [x] search bar
 
 
                 {categories.map((value, index) => {
                     return <li className = {categoryStyles.listItems} key={index}><button className = {categoryStyles.categoryButtons} id = {activeIndex === index ? categoryStyles.active : categoryStyles.inactive} onClick = {() => onCategoryChange(value, 0)}>{value}</button></li>
                 })}
-
