@@ -5,7 +5,7 @@ import LazyLoad  from 'react-lazyload';
 const Loading = () => {
   return(
     <div className = "loading">
-      <h5>Loading...</h5>
+      <p>Loading...</p>
     </div>
   );
 }

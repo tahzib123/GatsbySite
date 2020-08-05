@@ -15,11 +15,11 @@ const navbar = () => {
                 <div className={navbarStyles.menu}>
                 <div>
                     <div>
-                    <ul>
-                        <li><a href="www.google.com"><Link to = "/" className = {navbarStyles.links} activeClassName={navbarStyles.active}>Home</Link></a></li>
-                        <li><Link to = "/about" className = {navbarStyles.links} activeClassName={navbarStyles.active}>About</Link></li>
-                        <li><Link to = "/contact" className = {navbarStyles.links} activeClassName={navbarStyles.active}>Contact</Link></li>
-                    </ul>
+                        <ul className = {navbarStyles.linkList}>
+                            <li><Link to = "/" className = {navbarStyles.links} activeClassName={navbarStyles.active}>Home</Link></li>
+                            <li><Link to = "/about" className = {navbarStyles.links} activeClassName={navbarStyles.active}>About</Link></li>
+                            <li><Link to = "/contact" className = {navbarStyles.links} activeClassName={navbarStyles.active}>Contact</Link></li>
+                        </ul>
                     </div>
                 </div>
                 </div>

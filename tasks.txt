@@ -1,30 +1,33 @@
 [x] Gatsby Images
 [x] Gatsby SEO
-[x] PWA with gatsby-plugin-offline ??? maybe not possible when using react window
+[x] PWA with gatsby-plugin-offline 
 [x] Category filtering
-[x] remove api keys from gatsby config into env variables    https://codesandbox.io/s/github/smakosh/gatsby-portfolio-dev?file=/gatsby-config.js
 [x] 404 page  
 [x] better active category effect
 [x] search bar should not be case sensitive
 [x] Fix card container to make images take proper height of container
+[x] clear filters should reset back to the category not all the products (store currentCategory array and use it for filters. Then when clear filters is clicked reset state to currentCategory array)
+[x] fix image border radius
 [] google analytics https://www.gatsbyjs.org/docs/adding-analytics/
-[] contact form https://www.gatsbyjs.org/docs/building-a-contact-form/
-[] google featured snipits 
+
+
 [] add keys for props
 [] source own fonts https://markoskon.com/extremely-fast-load-time-with-gatsby-and-self-hosted-fonts/
 [] new color font for link items and category lists
-[] AMP
+
 [] scroll to top button
 [] remove all console logs
 [] categorys should be made programmatically
-
+[] show some way of seeing that the page changed when switching categories
 [] if applying both filters then it should narrow down the product array
-[] clear filters should reset back to the category not all the products (store currentCategory array and use it for filters. Then when clear filters is clicked reset state to currentCategory array)
-[] fix image border radius
-[]when you search for an item clear the active category
+[] remove api keys from gatsby config into env variables    https://codesandbox.io/s/github/smakosh/gatsby-portfolio-dev?file=/gatsby-config.js
+[] search bar becomes too large on small screens so go button is on newline
 
+[] hamburger menu not centered on mobile
 
-[x] search bar
+Long term
+[] AMP
+[] google featured snipits 
 
 
                 {categories.map((value, index) => {

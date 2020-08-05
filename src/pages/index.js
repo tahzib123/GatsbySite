@@ -38,27 +38,27 @@ const Index = () => {
     }
   `);
   //make a product card out of all the contentful posts from graphql query
-  const myProductArray = data.allContentfulPostInfo.edges.map((edge, index) => {
+  const myProductArray = data.allContentfulPostInfo.edges.map((edge) => {
     return (
-        <ProductCard key = {index} productData = {edge} />
+        <ProductCard key = {edge.node.slug.toString()} productData = {edge} />
     )
   });
-  //var currentCategoryProducts = myProductArray;   //so that we can reset back to current category products when clear filters is clicked
+  
 
   //---------------------------------------------------------------------- State hooks ------------------------------------------------------------------------ //
-  //state used to update the product list based on which category is selected
+  //update the products displayed based on categories and filters/searches
   const [productArray, setProductArray] = useState(myProductArray);
-  //state for the searchBox value
+  //for the searchBox value
   const [searchField, setSearchField] = useState("");
-  //state for which category is currently active
+  //category currently active
   const [activeIndex, setIndex] = useState(0);
-  //state for value of clearFilter button showing up on screen
+  //if clear filter button should show up 
   const [showClearFilter, setClearFilter] = useState(0);
-  //state for reseting age select drop down
+  //reseting age select drop down
   const [ageValue, setAgeValue] = useState("-1");
-  //state for reseting Budget select drop down
+  //reseting Budget select drop down
   const [budgetValue, setBudgetValue] = useState("-1");
-  //so that we can reset back to current category products when clear filters is clicked
+  //used so we can reset back to current category products when clear filters is clicked
   const [currentCategoryProducts, setCurrentCategoryProducts] = useState(myProductArray);
 
 
