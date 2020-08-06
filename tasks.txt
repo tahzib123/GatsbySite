@@ -8,28 +8,26 @@
 [x] Fix card container to make images take proper height of container
 [x] clear filters should reset back to the category not all the products (store currentCategory array and use it for filters. Then when clear filters is clicked reset state to currentCategory array)
 [x] fix image border radius
+[x] remove api keys from gatsby config into env variables 
+[x] hamburger menu not centered on mobile
 [] google analytics https://www.gatsbyjs.org/docs/adding-analytics/
 
-
 [] add keys for props
-[] source own fonts https://markoskon.com/extremely-fast-load-time-with-gatsby-and-self-hosted-fonts/
-[] new color font for link items and category lists
 
-[] scroll to top button
 [] remove all console logs
 [] categorys should be made programmatically
 [] show some way of seeing that the page changed when switching categories
-[] if applying both filters then it should narrow down the product array
-[] remove api keys from gatsby config into env variables    https://codesandbox.io/s/github/smakosh/gatsby-portfolio-dev?file=/gatsby-config.js
-[] search bar becomes too large on small screens so go button is on newline
 
-[] hamburger menu not centered on mobile
+  
+[] search bar becomes too large on small screens so go button is on newline
+[] when switching from cheap to expensive no products are shown
+[] change manifest icon and icon in browser tab
+
 
 Long term
 [] AMP
 [] google featured snipits 
+[] scroll to top button
+[] source own fonts https://markoskon.com/extremely-fast-load-time-with-gatsby-and-self-hosted-fonts/
 
 
-                {categories.map((value, index) => {
-                    return <li className = {categoryStyles.listItems} key={index}><button className = {categoryStyles.categoryButtons} id = {activeIndex === index ? categoryStyles.active : categoryStyles.inactive} onClick = {() => onCategoryChange(value, 0)}>{value}</button></li>
-                })}

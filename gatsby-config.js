@@ -3,7 +3,9 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 
 module.exports = {
@@ -14,7 +16,7 @@ module.exports = {
     description:
       "This is a site where you will find gifts for men for any occassion. We focus on gadgets for men however there are lots of different products to discover.",
     
-    image: "/images/logo.png",
+    image: "/images/logo9.png",
     
   },
 
@@ -26,8 +28,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: 'b8k2bnxfeu30',
-        accessToken: 'F68uiduIFxHYAEjrh489noC0HiBds555l2gjgHXQEgc',
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
@@ -41,9 +43,14 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
-        icon: "src/images/logo.png", 
+        icon: "src/images/logo9.png", 
         crossOrigin: `use-credentials`,  //optional CORS dependence
       },
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        
+        trackingId: process.env.GOOGLE_TRACKING_ID,
+      }
     },
   ],
 }

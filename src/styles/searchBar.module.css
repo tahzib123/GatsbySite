@@ -1,15 +1,20 @@
 .formContainer{
     width: 60%;
     margin: auto;
+    padding:0;
     padding-bottom:5%;
 }
 
-
+.searchForm{
+    width:100%;
+    margin:0;
+    padding: 0;;
+}
 .searchBox {
     border: 1px solid #2A2E52;
     height: 20px;
     width: 85%;
-    padding: 10px 10px 10px 5px;
+    padding: 10px 0px 10px 5px;
     outline: 0;
     background-color: #151729;
     color:#CDD5E0;
@@ -27,7 +32,7 @@
 
 .submitButton{
     border: 1px solid green;
-    width: 15%;
+    width: 13%;
     padding: 10px 10px 10px 10px;
     outline: 0;
     background-color: #00F69B;
@@ -49,10 +54,10 @@
     .formContainer{
         width:95%;
     }
-    .searchBox{
-        width:80%;
+    /* .searchBox{
+        width:75%;
     }
     .submitButton{
         width:15%;
-    }
+    } */
 }
