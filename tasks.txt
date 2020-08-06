@@ -10,19 +10,18 @@
 [x] fix image border radius
 [x] remove api keys from gatsby config into env variables 
 [x] hamburger menu not centered on mobile
-[] google analytics https://www.gatsbyjs.org/docs/adding-analytics/
+[x] google analytics
 
 [] add keys for props
 
 [] remove all console logs
-[] categorys should be made programmatically
 [] show some way of seeing that the page changed when switching categories
 
   
 [] search bar becomes too large on small screens so go button is on newline
 [] when switching from cheap to expensive no products are shown
 [] change manifest icon and icon in browser tab
-
+[]logo
 
 Long term
 [] AMP
