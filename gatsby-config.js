@@ -53,17 +53,6 @@ module.exports = {
           trackingId: process.env.GOOGLE_TRACKING_ID,
         }
     },
-    {
-        resolve: 'gatsby-plugin-html2amp',
-        options: {
-          files: ['post/**/index.html', 'index.html'],
-          publicPath: 'public',
-          gaConfigPath: 'gaConfig.json',
-          dist: 'public/dist',
-          optimize: true,
-          htmlPlugins: [],
-          cssPlugins: []
-        }
-    }      
+   
   ],
 }

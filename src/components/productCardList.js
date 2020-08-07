@@ -5,7 +5,7 @@ import LazyLoad  from 'react-lazyload';
 const Loading = () => {
   return(
     <div className = "loading">
-      <p>Loading...</p>
+      <p style = {{textAlign: "center"}}>Loading...</p>
     </div>
   );
 }
@@ -19,7 +19,7 @@ const ProductCardList = ({productArray}) => {
   }else{
     return (
       
-        <div className = "product-container">
+        <div style = {{padding:0}}className = "product-container">
           {productArray.map((product, index) => {
               return(
                 <LazyLoad key = {index} placeholder={<Loading />}>

@@ -11,17 +11,19 @@
 [x] remove api keys from gatsby config into env variables 
 [x] hamburger menu not centered on mobile
 [x] google analytics
-
+[x]center loading bar 
 [] add keys for props
 
 [] remove all console logs
 [] show some way of seeing that the page changed when switching categories
+[]update contact page
 
-  
 [] search bar becomes too large on small screens so go button is on newline
 [] when switching from cheap to expensive no products are shown
 [] change manifest icon and icon in browser tab
 []logo
+[]fix or remove amp plugin
+
 
 Long term
 [] AMP

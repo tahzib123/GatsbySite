@@ -1,13 +1,13 @@
 import React from 'react';
 import navbarStyles from '../styles/navbar.module.css';
-import logo from '../images/logo10.png';
+import logo from '../images/logo15.png';
 import { Link } from "gatsby"
 
 const navbar = () => {
     
     return(
         <div className = {navbarStyles.container}>
-            <Link to = "/"><img src = {logo} height = "100px" width ="100px" alt = "logo" className = {navbarStyles.logo} /></Link>
+            <Link to = "/"><img src = {logo} height = "50px" width ="50px" alt = "logo" className = {navbarStyles.logo} /></Link>
             <div className={navbarStyles.menuWrap}>
                 {/* eslint-disable-next-line  */}
                 <input type="checkbox" className={navbarStyles.toggler}></input>
