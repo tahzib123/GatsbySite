@@ -10,7 +10,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 const ProductCard = ({productData}) => {
     
     return(
-            <div className = {productStyles.container}>
+            <li className = {productStyles.container}>
                 
                 <div className = {productStyles.gridS1}>
                     <Img fluid = {productData.node.productImage.fluid}  className = {productStyles.productImage} alt = "product" />
@@ -37,7 +37,7 @@ const ProductCard = ({productData}) => {
                         </form>                    
                     </div>
                 </div>
-            </div>
+            </li>
     )
 
 

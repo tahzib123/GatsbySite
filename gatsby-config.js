@@ -43,7 +43,7 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: "standalone",
-        icon: "src/images/logo9.png", 
+        icon: "src/images/logo15.png", 
         crossOrigin: `use-credentials`,  //optional CORS dependence
       }
     },
@@ -53,6 +53,5 @@ module.exports = {
           trackingId: process.env.GOOGLE_TRACKING_ID,
         }
     },
-   
   ],
 }

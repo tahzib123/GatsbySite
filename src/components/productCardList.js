@@ -19,7 +19,7 @@ const ProductCardList = ({productArray}) => {
   }else{
     return (
       
-        <div style = {{padding:0}}className = "product-container">
+        <ul style = {{padding:0}}className = "product-container">
           {productArray.map((product, index) => {
               return(
                 <LazyLoad key = {index} placeholder={<Loading />}>
@@ -28,7 +28,7 @@ const ProductCardList = ({productArray}) => {
               ); 
           })}
 
-        </div>
+        </ul>
     
     );
   }

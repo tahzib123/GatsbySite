@@ -164,9 +164,6 @@ const Index = () => {
 
 
 
-  
-  
-
   return(
     <div>
       <Helmet htmlAttributes={{ lang: 'en' }}>
