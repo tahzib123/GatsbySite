@@ -171,10 +171,10 @@ const Index = () => {
     <div>
       <Helmet htmlAttributes={{ lang: 'en' }}>
           <meta charSet="utf-8" />
-          <meta name="title" content="Gadgets For Guys"/>
+          <meta name="title" content="The Best Gadgets For Men in 2020 - Ultimate Gift Finder"/>
           <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />   {/* might not work */}
           <meta name = "description" content = "The ultimate way to find affordable gadgets for men. Perfect for any occassion and plenty of options for everyone." />
-          <title>Gadgets For Guys</title>
+          <title>The Best Gadgets For Men in 2020 - Ultimate Gift Finder</title>
       </Helmet>
       <Navbar />
       <WelcomeBanner />
