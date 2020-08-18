@@ -23,7 +23,7 @@
 [] change manifest icon and icon in browser tab
 []logo
 []fix or remove amp plugin
-
+[]fix serarch bar
 
 Long term
 [] AMP
